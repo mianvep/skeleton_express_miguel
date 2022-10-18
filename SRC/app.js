@@ -6,6 +6,7 @@ const { port } = require("./config");
 const db = require("./tools/database");
 const userRouter = require("./users/users.router");
 const authRouter = require("./auth/auth.router");
+const initModels = require("./models/initModels");
 
 // ?init configs
 const app = express();
@@ -27,6 +28,8 @@ db.sync()
 	.catch((err) => {
 		console.log(err);
 	});
+
+initModels();
 
 app.get("/", (req, res) => {
 	res.status(200).json({

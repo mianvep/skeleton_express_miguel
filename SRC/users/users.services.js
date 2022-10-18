@@ -135,13 +135,9 @@ const patchMyUser = (req, res) => {
 			country,
 		})
 		.then((response) => {
-			if (response[0]) {
-				res
-					.status(200)
-					.json({ message: `User with id: ${id}, was successfully updated` });
-			} else {
-				res.status(400).json({ message: "invalid ID" });
-			}
+			res
+				.status(200)
+				.json({ message: `User with id: ${id}, was successfully updated` });
 		})
 		.catch((err) => res.status(400).json({ message: err.message }));
 };
