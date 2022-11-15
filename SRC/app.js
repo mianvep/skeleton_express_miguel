@@ -1,7 +1,6 @@
 // ? dependecies
 const express = require("express");
 
-//? files
 const { port } = require("./config");
 const db = require("./tools/database");
 const userRouter = require("./users/users.router");
